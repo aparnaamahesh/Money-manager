@@ -1,4 +1,5 @@
 let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
+let chart;
 
 function addTransaction() {
   let desc = document.getElementById("desc").value;
@@ -16,13 +17,21 @@ function addTransaction() {
   };
 
   transactions.push(transaction);
-  localStorage.setItem("transactions", JSON.stringify(transactions));
+  saveAndUpdate();
+}
 
+function deleteTransaction(id){
+  transactions = transactions.filter(t => t.id !== id);
+  saveAndUpdate();
+}
+
+function saveAndUpdate(){
+  localStorage.setItem("transactions", JSON.stringify(transactions));
   document.getElementById("desc").value = "";
   document.getElementById("amount").value = "";
-
   showTransactions();
   updateBalance();
+  updateChart();
 }
 
 function showTransactions(){
@@ -31,7 +40,10 @@ function showTransactions(){
 
   transactions.forEach(t => {
     let li = document.createElement("li");
-    li.innerHTML = `<span>${t.desc}</span> <span>₹${t.amount}</span>`;
+    li.innerHTML = `
+      <span>${t.desc} : ₹${t.amount}</span>
+      <button class="delete-btn" onclick="deleteTransaction(${t.id})">X</button>
+    `;
     list.appendChild(li);
   });
 }
@@ -42,5 +54,31 @@ function updateBalance(){
   document.getElementById("balance").innerText = total;
 }
 
+function updateChart(){
+  let expense = transactions
+    .filter(t => t.amount < 0)
+    .map(t => Math.abs(t.amount));
+
+  let labels = transactions
+    .filter(t => t.amount < 0)
+    .map(t => t.desc);
+
+  if(chart) chart.destroy();
+
+  chart = new Chart(document.getElementById("expenseChart"), {
+    type: "pie",
+    data: {
+      labels: labels,
+      datasets: [{
+        data: expense,
+        backgroundColor: [
+          "#ff6384","#ff9f40","#ffcd56","#4bc0c0","#36a2eb","#9966ff"
+        ]
+      }]
+    }
+  });
+}
+
 showTransactions();
 updateBalance();
+updateChart();
