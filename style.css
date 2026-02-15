@@ -4,16 +4,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
-/* glass card */
 .container {
   backdrop-filter: blur(15px);
   background: rgba(255,255,255,0.6);
   padding: 30px;
   border-radius: 25px;
-  width: 360px;
+  width: 380px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.15);
   text-align: center;
 }
@@ -23,19 +22,12 @@ h1 {
   color: #ff4fa3;
 }
 
-
 .balance-card {
   background: linear-gradient(135deg,#ffb6c1,#ffc0cb);
   padding: 15px;
   border-radius: 18px;
   margin-bottom: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
-
-.balance-card h2 {
-  margin: 5px 0;
-}
-
 
 .form input {
   width: 100%;
@@ -45,8 +37,6 @@ h1 {
   border: none;
   outline: none;
   font-family: "Comic Sans MS", cursive;
-  background: rgba(255,255,255,0.9);
-  box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
 }
 
 button {
@@ -59,13 +49,10 @@ button {
   border-radius: 12px;
   cursor: pointer;
   font-size: 16px;
-  font-family: "Comic Sans MS", cursive;
-  transition: 0.3s;
 }
 
 button:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
 .history {
@@ -85,5 +72,19 @@ li {
   border-radius: 12px;
   display: flex;
   justify-content: space-between;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  align-items: center;
+}
+
+.delete-btn {
+  background: red;
+  border: none;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.chart-box {
+  margin-top: 25px;
 }
