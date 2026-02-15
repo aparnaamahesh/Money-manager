@@ -5,80 +5,105 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  padding: 30px;
 }
 
+/* main container */
 .container {
   backdrop-filter: blur(15px);
-  background: rgba(255,255,255,0.7);
-  padding: 30px;
+  background: rgba(255,255,255,0.75);
+  padding: 35px;
   border-radius: 25px;
   width: 380px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 35px rgba(0,0,0,0.15);
   text-align: center;
+
+  /* spacing between all sections */
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
 }
 
 h1 {
   color: #ff4fa3;
+  margin-bottom: 5px;
 }
 
-/* budget */
+/* budget section */
+.budget-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .budget-box input {
-  width: 65%;
-  padding: 10px;
-  border-radius: 10px;
+  padding: 12px;
+  border-radius: 12px;
   border: none;
 }
 
 .budget-box button {
-  padding: 10px;
+  padding: 12px;
   border: none;
   background: #ff69b4;
   color: white;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
 }
 
 .budget-text {
-  margin: 5px;
+  margin: 2px;
   font-weight: bold;
 }
 
-/* balance */
+/* balance card */
 .balance-card {
   background: linear-gradient(135deg,#ffb6c1,#ffc0cb);
-  padding: 15px;
+  padding: 18px;
   border-radius: 18px;
-  margin: 15px 0;
+  margin-top: 5px;
 }
 
-/* form */
+/* form spacing */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .form input {
-  width: 100%;
   padding: 12px;
-  margin: 8px 0;
   border-radius: 12px;
   border: none;
 }
 
 button {
-  width: 100%;
   padding: 12px;
   background: linear-gradient(135deg,#ff69b4,#ff4fa3);
   color: white;
   border: none;
   border-radius: 12px;
   cursor: pointer;
+  font-size: 15px;
 }
 
-/* list */
+/* transaction history */
+.history {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 li {
-  margin: 8px 0;
-  padding: 10px;
+  margin: 6px 0;
+  padding: 12px;
   border-radius: 12px;
   display: flex;
   justify-content: space-between;
@@ -102,12 +127,13 @@ li {
   background: red;
   border: none;
   color: white;
-  padding: 5px 8px;
+  padding: 6px 9px;
   border-radius: 8px;
   cursor: pointer;
 }
 
+/* chart */
 .chart-box {
-  margin-top: 20px;
+  margin-top: 10px;
+  padding-top: 10px;
 }
-
