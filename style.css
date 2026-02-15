@@ -1,5 +1,5 @@
 body {
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: "Comic Sans MS", cursive;
   background: linear-gradient(135deg, #ffd6e7, #ffc0cb);
   display: flex;
   justify-content: center;
@@ -9,7 +9,7 @@ body {
 
 .container {
   backdrop-filter: blur(15px);
-  background: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.7);
   padding: 30px;
   border-radius: 25px;
   width: 380px;
@@ -18,61 +18,84 @@ body {
 }
 
 h1 {
-  margin-bottom: 20px;
   color: #ff4fa3;
 }
 
+/* budget */
+.budget-box input {
+  width: 65%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.budget-box button {
+  padding: 10px;
+  border: none;
+  background: #ff69b4;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.budget-text {
+  margin: 5px;
+  font-weight: bold;
+}
+
+/* balance */
 .balance-card {
   background: linear-gradient(135deg,#ffb6c1,#ffc0cb);
   padding: 15px;
   border-radius: 18px;
-  margin-bottom: 20px;
+  margin: 15px 0;
 }
 
+/* form */
 .form input {
   width: 100%;
   padding: 12px;
   margin: 8px 0;
   border-radius: 12px;
   border: none;
-  outline: none;
-  font-family: "Comic Sans MS", cursive;
 }
 
 button {
   width: 100%;
   padding: 12px;
-  margin-top: 10px;
   background: linear-gradient(135deg,#ff69b4,#ff4fa3);
   color: white;
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  font-size: 16px;
 }
 
-button:hover {
-  transform: scale(1.05);
-}
-
-.history {
-  margin-top: 20px;
-  text-align: left;
-}
-
+/* list */
 ul {
   list-style: none;
   padding: 0;
 }
 
 li {
-  background: rgba(255,255,255,0.9);
   margin: 8px 0;
   padding: 10px;
   border-radius: 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: white;
+}
+
+/* green income */
+.income {
+  border-left: 6px solid green;
+  color: green;
+}
+
+/* red expense */
+.expense {
+  border-left: 6px solid red;
+  color: red;
 }
 
 .delete-btn {
@@ -82,9 +105,9 @@ li {
   padding: 5px 8px;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 12px;
 }
 
 .chart-box {
-  margin-top: 25px;
+  margin-top: 20px;
 }
+
