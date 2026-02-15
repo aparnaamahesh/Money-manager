@@ -8,19 +8,23 @@
 <body>
 
 <div class="container">
-  <h1> MONEY MANAGER</h1>
-  <div class="balance">
-    <h2>Balance: ₹<span id="balance">0</span></h2>
+  <h1> Money Manager</h1>
+
+  <div class="balance-card">
+    <p>Total Balance</p>
+    <h2>₹<span id="balance">0</span></h2>
   </div>
 
   <div class="form">
-    <input type="text" id="desc" placeholder="Description">
-    <input type="number" id="amount" placeholder="Amount (+income, -expense)">
+    <input type="text" id="desc" placeholder=" Description">
+    <input type="number" id="amount" placeholder=" Amount (+income, -expense)">
     <button onclick="addTransaction()">Add Transaction</button>
   </div>
 
-  <h3>TRANSACTIONS</h3>
-  <ul id="list"></ul>
+  <div class="history">
+    <h3>🧾 Transactions</h3>
+    <ul id="list"></ul>
+  </div>
 </div>
 
 <script src="script.js"></script>
