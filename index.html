@@ -4,11 +4,14 @@
   <meta charset="UTF-8">
   <title>Money Manager</title>
   <link rel="stylesheet" href="style.css">
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
 <div class="container">
-  <h1> Money Manager</h1>
+  <h1>MONEY MANAGER</h1>
 
   <div class="balance-card">
     <p>Total Balance</p>
@@ -24,6 +27,11 @@
   <div class="history">
     <h3>🧾 Transactions</h3>
     <ul id="list"></ul>
+  </div>
+
+  <div class="chart-box">
+    <h3>📊 Expense Chart</h3>
+    <canvas id="expenseChart"></canvas>
   </div>
 </div>
 
