@@ -1,5 +1,16 @@
 let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
+let budget = localStorage.getItem("budget") || 0;
 let chart;
+
+document.getElementById("budget").innerText = budget;
+
+function setBudget(){
+  budget = document.getElementById("budgetInput").value;
+  if(budget === "") return;
+  localStorage.setItem("budget", budget);
+  document.getElementById("budget").innerText = budget;
+  updateRemaining();
+}
 
 function addTransaction() {
   let desc = document.getElementById("desc").value;
@@ -32,6 +43,7 @@ function saveAndUpdate(){
   showTransactions();
   updateBalance();
   updateChart();
+  updateRemaining();
 }
 
 function showTransactions(){
@@ -40,6 +52,9 @@ function showTransactions(){
 
   transactions.forEach(t => {
     let li = document.createElement("li");
+
+    li.classList.add(t.amount > 0 ? "income" : "expense");
+
     li.innerHTML = `
       <span>${t.desc} : ₹${t.amount}</span>
       <button class="delete-btn" onclick="deleteTransaction(${t.id})">X</button>
@@ -52,6 +67,13 @@ function updateBalance(){
   let total = 0;
   transactions.forEach(t => total += t.amount);
   document.getElementById("balance").innerText = total;
+}
+
+function updateRemaining(){
+  let spent = 0;
+  transactions.forEach(t => spent += t.amount);
+  let remaining = budget - spent;
+  document.getElementById("remaining").innerText = remaining;
 }
 
 function updateChart(){
@@ -82,3 +104,4 @@ function updateChart(){
 showTransactions();
 updateBalance();
 updateChart();
+updateRemaining();
