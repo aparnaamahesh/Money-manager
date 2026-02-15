@@ -31,7 +31,7 @@ function showTransactions(){
 
   transactions.forEach(t => {
     let li = document.createElement("li");
-    li.innerText = `${t.desc} : ₹${t.amount}`;
+    li.innerHTML = `<span>${t.desc}</span> <span>₹${t.amount}</span>`;
     list.appendChild(li);
   });
 }
