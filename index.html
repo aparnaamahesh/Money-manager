@@ -4,35 +4,44 @@
   <meta charset="UTF-8">
   <title>Money Manager</title>
   <link rel="stylesheet" href="style.css">
-
-  
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
 <div class="container">
-  <h1>MONEY MANAGER</h1>
+  <h1>💸 My Money Diary</h1>
 
+  <!-- Budget input -->
+  <div class="budget-box">
+    <input type="number" id="budgetInput" placeholder="Enter monthly budget">
+    <button onclick="setBudget()">Set Budget</button>
+    <p class="budget-text">Budget: ₹<span id="budget">0</span></p>
+    <p class="budget-text">Remaining: ₹<span id="remaining">0</span></p>
+  </div>
+
+  <!-- balance -->
   <div class="balance-card">
     <p>Total Balance</p>
     <h2>₹<span id="balance">0</span></h2>
   </div>
 
+  <!-- form -->
   <div class="form">
-    <input type="text" id="desc" placeholder=" Description">
-    <input type="number" id="amount" placeholder=" Amount (+income, -expense)">
+    <input type="text" id="desc" placeholder="Description">
+    <input type="number" id="amount" placeholder="Amount (+income, -expense)">
     <button onclick="addTransaction()">Add Transaction</button>
   </div>
 
   <div class="history">
-    <h3>🧾 Transactions</h3>
+    <h3>Transactions</h3>
     <ul id="list"></ul>
   </div>
 
   <div class="chart-box">
-    <h3>📊 Expense Chart</h3>
+    <h3>Expense Chart</h3>
     <canvas id="expenseChart"></canvas>
   </div>
+
 </div>
 
 <script src="script.js"></script>
